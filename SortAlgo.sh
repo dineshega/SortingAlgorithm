@@ -6,4 +6,4 @@ read -p "Enter first number: " a
 read -p "Enter second number: " b
 read -p "Enter third number: " c
 
-x=$(awk 'BEGIN {print '$a'+('$b'*'$c')}')
+y=$(awk 'BEGIN {print ('$a'*'$b')+'$c'}')
