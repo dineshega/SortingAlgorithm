@@ -1,7 +1,6 @@
 #!/bin/bash -x
 
 echo " Sorting Arithmetic Computation Problem"
-
 declare -A result
 
 j=0
@@ -41,3 +40,17 @@ do
 	done
 done
 echo "Descending order: " ${res[@]}
+
+for((l=0;l<4;l++))
+do
+	for ((m=$l+1; m<4; m++))
+	do
+		if [[ ${res[$l]} -gt ${res[$m]} ]]
+		then
+			temp=${res[$l]}
+			res[$l]=${res[$m]}
+			res[$m]=$temp
+		fi
+	done
+done
+echo "Ascending order: " ${res[@]}
