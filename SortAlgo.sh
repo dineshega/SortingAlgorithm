@@ -5,6 +5,8 @@ echo " Sorting Arithmetic Computation Problem"
 declare -A result
 
 j=0
+k=0
+temp=0
 
 read -p "Enter first number: " a
 read -p "Enter second number: " b
@@ -25,3 +27,17 @@ do
 	j=$((j+1))
 done
 echo ${res[@]}
+
+for((l=0;l<4;l++))
+do
+	for ((m=$l+1; m<4; m++))
+	do
+		if [[ ${res[$l]} -lt ${res[$m]} ]]
+		then
+			temp=${res[$l]}
+			res[$l]=${res[$m]}
+			res[$m]=$temp
+		fi
+	done
+done
+echo "Descending order: " ${res[@]}
