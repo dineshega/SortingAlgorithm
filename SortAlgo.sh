@@ -28,16 +28,6 @@ do
 done
 echo ${res[@]}
 
-for((l=0;l<4;l++))
-do
-	for ((m=$l+1; m<4; m++))
-	do
-		if [[ ${res[$l]} -lt ${res[$m]} ]]
-		then
-			temp=${res[$l]}
-			res[$l]=${res[$m]}
-			res[$m]=$temp
-		fi
-	done
-done
-echo "Descending order: " ${res[@]}
+echo "descending order is: "
+
+printf '%s\n' "${res[@]}" | sort -rn
