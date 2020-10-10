@@ -3,7 +3,6 @@
 echo " Sorting Arithmetic Computation Problem"
 
 declare -A result
-
 j=0
 k=0
 temp=0
