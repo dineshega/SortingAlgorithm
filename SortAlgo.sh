@@ -26,31 +26,10 @@ do
 	j=$((j+1))
 done
 echo ${res[@]}
+echo "descending order is: "
 
-for((l=0;l<4;l++))
-do
-	for ((m=$l+1; m<4; m++))
-	do
-		if [[ ${res[$l]} -lt ${res[$m]} ]]
-		then
-			temp=${res[$l]}
-			res[$l]=${res[$m]}
-			res[$m]=$temp
-		fi
-	done
-done
-echo "Descending order: " ${res[@]}
+printf '%s\n' "${res[@]}" | sort -rn
 
-for((l=0;l<4;l++))
-do
-	for ((m=$l+1; m<4; m++))
-	do
-		if [[ ${res[$l]} -gt ${res[$m]} ]]
-		then
-			temp=${res[$l]}
-			res[$l]=${res[$m]}
-			res[$m]=$temp
-		fi
-	done
-done
-echo "Ascending order: " ${res[@]}
+echo "ascending order is: "
+
+printf '%s\n' "${res[@]}" | sort -n 
